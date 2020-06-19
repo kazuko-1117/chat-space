@@ -8,7 +8,7 @@
 
 ### Association
 - has_many :message
-- has_many :groups_users
+- belongs_to :groups_users
 - has_many :groups, through:  :groups_users
 
 
@@ -20,8 +20,9 @@
 
 ### Association
 - has_many :message
+- has_many :groups_users
 - has_many  :users,  through:  :groups_users
-- belongs_to  :users, through:  :groups_users
+
 
 
 
