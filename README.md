@@ -19,7 +19,7 @@
 
 ### Association
 - has_many :message
-- has_many  :user,  through:  :groups_users
+- has_many  :users,  through:  :groups_users
 
 
 
