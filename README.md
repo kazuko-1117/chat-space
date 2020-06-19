@@ -21,6 +21,7 @@
 ### Association
 - has_many :message
 - has_many  :users,  through:  :groups_users
+- belongs_to  :users, through:  :groups_users
 
 
 
