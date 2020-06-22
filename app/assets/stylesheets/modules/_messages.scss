@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.SideBar {
+  width: 300px;
+}
+
+
+.LeftHeader {
+  height: 100px;
+  background-color: #253141;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__name_icon{
+    width: 260px;
+    display: flex;
+    line-height:20px ;
+    justify-content: space-between;
+  }
+  &__userName {
+    font-size: 16px;
+    font-weight: bold;
+    color:#fff;
+  }
+  &__Icon {
+    display: flex;
+  }
+  &__icon {
+    display: block;
+    margin-left: 5px;
+  }
+  &__edit, &__setting {
+    color:#fff;
+    text-decoration: none;
+  }
+}
+
+.LeftMain {
+  height: calc(100vh - 100px);
+  background-color: #2f3e51; 
+  padding: 10px 20px 0 20px ;
+  &__Group {
+    width: 260px;
+    height: 105px;
+  }
+  &__GroupName {
+    font-size: 15px;
+    width: 260px;
+    height: 23px;
+    margin-top: 20px;
+    color: #fff;
+    justify-content: center;
+  }
+  &__LatestMessage {
+    font-size: 11px;
+    width: 260px;
+    height: 17px;
+    margin-top: 5px ;
+    color: #fff;
+
+  }
+}
+
+
+
+.MainChat {
+  width: calc(100vw - 300px);
+  height: 100vh;
+  &__header {
+    height: 100px;
+    background-color: #ffffff;
+    border-bottom:1px solid #eeeeee;
+  }
+  &__messages {
+    background-color: #fafafa;
+    height: calc(100vh - 190px);
+
+  }
+  &__form {
+    height: 90px;
+    background-color: #d2d2d2;
+  }
+}
+
+.MainHeader {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  &__Left {
+    width: 165px;
+    height: 100px;
+    margin-left: 40px;
+  }
+  &__Right {
+    width:112px ;
+    height: 100px;
+  }
+  &__GroupName {
+    height: 30px;
+    width: 165px;
+    margin-top: 35px;
+    font-size: 20px;
+  }
+  &__MemberList {
+    height: 20px;
+    width: 165px;
+    margin-top: 15px ;
+    font-size: 12px;
+    display: flex;
+    color: #999999;
+  }
+  &__Member {
+    font-size: 12px;
+    padding-left: 8px;
+  }
+  &__EditBtn {
+    width: 72px;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 28px;
+    color: #38aef0;
+    border: 1px solid #38aef0;
+    text-align: center;
+    line-height: 40px;
+  }
+
+}
+
+.MainMessages {
+  height:80px;
+  padding: 35px 0 0 40px;
+  margin-bottom: 46px;
+  &__Top {
+    display: flex;
+    height: 20px;
+   
+  }
+  &__Name {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+  }
+  &__Time {
+    font-size: 12px;
+    padding-left: 10px;
+    color: #999999;
+  }
+  &__Text {
+    height: 18px;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #434A54;
+  }
+
+
+}
+
+.MainForm {
+  height: 90px;
+  width: calc(100vw - 300px);
+  display: flex;
+  align-items: center;
+  &__Text {
+    width: calc(100vw - 495px);
+    height: 50px;
+    border: none;
+    padding-left: 10px;
+    margin-left: 40px;
+    position: relative;
+  }
+  &__Image {
+    width:20px;
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 10px;
+    margin-left: 40px;
+    position: absolute;
+    right: 155px;
+    font-size: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__File {
+    width: 0;
+  }
+}
+
+.MainSubmit {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  &__Btn{
+    width: 100px;
+    height: 50px;
+    background-color: #38aef0;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    margin-left: 15px;
+
+  }
+
+}
+
+a {
+  text-decoration: none;
+}
+
