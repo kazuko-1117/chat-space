@@ -1,0 +1,46 @@
+.MainChat
+  .MainChat__header
+    .MainHeader
+      .MainHeader__Left
+        .MainHeader__GroupName test
+        %ul.MainHeader__MemberList
+          Member :  
+          %li.MainHeader__Member
+            tarou
+          %li.MainHeader__Member
+            zirou
+              
+
+      .MainHeader__Right
+        = link_to "#" do
+          .MainHeader__EditBtn Edit
+        
+  
+  
+  .MainChat__messages
+    .MainMessages
+      .MainMessages__Top 
+        .MainMessages__Name tarou
+        .MainMessages__Time 2020年06月23日 01時25分
+      .MainMessages__Text おはよう
+    .MainMessages
+      .MainMessages__Top 
+        .MainMessages__Name tarou
+        .MainMessages__Time 2020年06月23日 01時25分
+      .MainMessages__Text おはよう
+    .MainMessages
+      .MainMessages__Top 
+        .MainMessages__Name tarou
+        .MainMessages__Time 2020年06月23日 01時25分
+      .MainMessages__Text おはよう
+
+  .MainChat__form
+    .MainForm
+      %input.MainForm__Text{type: "text",placeholder: "type a message"}
+        %label{class: "MainForm__Image"}
+          %input{class: "MainForm__File",type: "file"}
+          = icon('far', 'image')
+      .MainSubmit
+        %input.MainSubmit__Btn{type: "submit", value:"Send"}
+
+    
