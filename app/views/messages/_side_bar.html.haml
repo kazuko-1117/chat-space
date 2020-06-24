@@ -5,28 +5,17 @@
         = current_user.name
       %ul.LeftHeader__Icon
         %li.LeftHeader__icon
-          = link_to "#", class:"LeftHeader__edit" do
+          = link_to new_group_path(current_user), class:"LeftHeader__edit" do
             = icon('fas', 'edit')
         %li.LeftHeader__icon
           = link_to edit_user_path(current_user),class:"LeftHeader__setting" do
             = icon('fas', 'cog')
         
   .LeftMain
-    .LeftMain__Group
-      = link_to "#" do
-        .LeftMain__GroupName y
-        .LeftMain__LatestMessage まだメッセージはありません。
-    .LeftMain__Group
-      = link_to "#" do
-        .LeftMain__GroupName y
-        .LeftMain__LatestMessage まだメッセージはありません。
-    .LeftMain__Group
-      = link_to "#" do
-        .LeftMain__GroupName y
-        .LeftMain__LatestMessage まだメッセージはありません。
-
-
-
-      
-
-
+    - current_user.groups.each do |group|
+      .LeftMain__Group
+        = link_to "#" do
+          .LeftMain__GroupName 
+            = group.name
+          .LeftMain__LatestMessage
+            メッセージはまだありません
