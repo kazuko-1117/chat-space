@@ -14,8 +14,8 @@
   .LeftMain
     - current_user.groups.each do |group|
       .LeftMain__Group
-        = link_to "#" do
+        = link_to group_messages_path(group) do
           .LeftMain__GroupName 
             = group.name
           .LeftMain__LatestMessage
-            メッセージはまだありません
+            = group.show_last_message
