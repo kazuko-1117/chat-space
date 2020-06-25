@@ -1,0 +1,24 @@
+.MainMessages
+  .MainMessages__Top 
+    .MainMessages__Name
+      = message.user.name
+    .MainMessages__Time
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .MainMessages__Text
+    - if message.content.present?
+      %p.MainMessage__content
+        = message.content
+    = image_tag message.image.url, class: 'MainMessage__image' if message.image.present?
+
+
+
+    -# .MainMessages
+    -#   .MainMessages__Top 
+    -#     .MainMessages__Name tarou
+    -#     .MainMessages__Time 2020年06月23日 01時25分
+    -#   .MainMessages__Text おはよう
+    -# .MainMessages
+    -#   .MainMessages__Top 
+    -#     .MainMessages__Name tarou
+    -#     .MainMessages__Time 2020年06月23日 01時25分
+    -#   .MainMessages__Text おはよう

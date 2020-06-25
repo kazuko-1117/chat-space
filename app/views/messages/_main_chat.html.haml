@@ -2,45 +2,57 @@
   .MainChat__header
     .MainHeader
       .MainHeader__Left
-        .MainHeader__GroupName test
+        .MainHeader__GroupName
+          = @group.name   
         %ul.MainHeader__MemberList
           Member :  
           %li.MainHeader__Member
-            tarou
-          %li.MainHeader__Member
-            zirou
+            - @group.users.each do |user|
+              = user.name
+         
+        
+    
+      -#        - current_user.groups.each do |group|
+      -# .LeftMain__Group
+      -#   = link_to group_messages_path(group) do
+      -#     .LeftMain__GroupName 
+      -#       = group.name
+      -#     .LeftMain__LatestMessage
+      -#       = group.show_last_message
               
 
       .MainHeader__Right
-        = link_to "#" do
+        = link_to edit_group_path(@group) do
           .MainHeader__EditBtn Edit
-        
-  
   
   .MainChat__messages
-    .MainMessages
-      .MainMessages__Top 
-        .MainMessages__Name tarou
-        .MainMessages__Time 2020年06月23日 01時25分
-      .MainMessages__Text おはよう
-    .MainMessages
-      .MainMessages__Top 
-        .MainMessages__Name tarou
-        .MainMessages__Time 2020年06月23日 01時25分
-      .MainMessages__Text おはよう
-    .MainMessages
-      .MainMessages__Top 
-        .MainMessages__Name tarou
-        .MainMessages__Time 2020年06月23日 01時25分
-      .MainMessages__Text おはよう
+    = render @messages
 
   .MainChat__form
-    .MainForm
-      %input.MainForm__Text{type: "text",placeholder: "type a message"}
-        %label{class: "MainForm__Image"}
-          %input{class: "MainForm__File",type: "file"}
+    = form_with model: [@group, @message],  local: true do |f|
+      .MainForm
+        = f.text_field :content, placeholder: 'type a message',class: 'MainForm__Text'
+        = f.label :image, class: 'MainForm__Image' do
+          = f.file_field :image, class: 'MainForm__File'
           = icon('far', 'image')
-      .MainSubmit
-        %input.MainSubmit__Btn{type: "submit", value:"Send"}
+        .MainSubmit
+          = f.submit 'Send', class: 'MainSubmit__Btn'
 
-    
+  -# .Footer
+  -#   = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+  -#     .Form__contents
+  -#       = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+  -#       = f.label :image, class: 'Form__inputImage' do
+  -#         = icon('far', 'image', class: 'Form__icon')
+  -#         = f.file_field :image, class: 'Hidden'
+  -#     = f.submit 'Send', class: 'Form__submit'
+  
+  -# .MainChat__form
+  -#   .MainForm
+  -#     %input.MainForm__Text{type: "text",placeholder: "type a message"}
+  -#       %label{class: "MainForm__Image"}
+  -#         %input{class: "MainForm__File",type: "file"}
+  -#         = icon('far', 'image')
+  -#     .MainSubmit
+  -#       %input.MainSubmit__Btn{type: "submit", value:"Send"}
+
