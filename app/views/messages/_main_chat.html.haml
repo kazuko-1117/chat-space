@@ -29,14 +29,27 @@
     = render @messages
 
   .MainChat__form
-    = form_with model: [@group, @message],  local: true do |f|
+    = form_with model: [@group, @message], html:{class: 'new_message'}, local: true do |f|
       .MainForm
         = f.text_field :content, placeholder: 'type a message',class: 'MainForm__Text'
         = f.label :image, class: 'MainForm__Image' do
           = f.file_field :image, class: 'MainForm__File'
           = icon('far', 'image')
-        .MainSubmit
-          = f.submit 'Send', class: 'MainSubmit__Btn'
+        = f.submit 'Send', class: 'MainForm__Btn'
+-# .MainForm
+-#         = f.text_field :content, placeholder: 'type a message',class: 'MainForm__Text'
+-#         = f.label :image, class: 'MainForm__Image' do
+-#           = f.file_field :image, class: 'MainForm__File'
+-#           = icon('far', 'image')
+-#         .MainSubmit
+-#           = f.submi
+
+
+
+
+
+
+
 
   -# .Footer
   -#   = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
