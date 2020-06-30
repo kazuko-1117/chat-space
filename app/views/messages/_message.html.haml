@@ -8,17 +8,4 @@
     - if message.content.present?
       %p.MainMessage__content
         = message.content
-    = image_tag message.image.url, class: 'MainMessage__image' if message.image.present?
-
-
-
-    -# .MainMessages
-    -#   .MainMessages__Top 
-    -#     .MainMessages__Name tarou
-    -#     .MainMessages__Time 2020年06月23日 01時25分
-    -#   .MainMessages__Text おはよう
-    -# .MainMessages
-    -#   .MainMessages__Top 
-    -#     .MainMessages__Name tarou
-    -#     .MainMessages__Time 2020年06月23日 01時25分
-    -#   .MainMessages__Text おはよう
+    = image_tag message.image.url, class: 'MainMessage__image', width: '424px' if message.image.present?
