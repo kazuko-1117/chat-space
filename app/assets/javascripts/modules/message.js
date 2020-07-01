@@ -1,8 +1,8 @@
-$(function() {
-  function buildHTML(message) {
-    if( message.image ) {
-      let html = 
-        `<div class="MainMessages">
+$(function(){
+  function buildHTML(message){
+    if ( message.image ) {
+      let html =
+        `<div class="MainMessages" data-message-id=${message.id}>
           <div class="MainMessages__Top">
             <div class="MainMessages__Name">
               ${message.user_name}
@@ -12,7 +12,7 @@ $(function() {
             </div>
           </div>
           <div class="MainMessages__Text">
-            <p class="MainMessage__content">
+            <p class="MainMessages__content">
               ${message.content}
             </p>
             <img class="MainMessage__image" width="424px" src="${message.image}">
@@ -21,7 +21,7 @@ $(function() {
       return html;
     } else {
       let html =
-        `<div class="MainMessages">
+        `<div class="MainMessages" data-message-id=${message.id}>
           <div class="MainMessages__Top">
             <div class="MainMessages__Name">
               ${message.user_name}
@@ -31,7 +31,7 @@ $(function() {
             </div>
           </div>
           <div class="MainMessages__Text">
-            <p class="MainMessage__content">
+            <p class="MainMessages__content">
               ${message.content}
             </p>
           </div>
@@ -39,8 +39,9 @@ $(function() {
         return html;
     };
   }
-  $('.new_message').on('submit',function(e){
-    e.preventDefault()
+
+  $('.new_message').on('submit', function(e){
+    e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
     $.ajax({
@@ -52,14 +53,15 @@ $(function() {
       contentType: false
     })
     .done(function(data){
-      let html = buildHTML(data);
+      var html = buildHTML(data);
       $('.MainChat__messages').append(html);
-      $('.MainChat__messages').animate({ scrollTop: $('.MainChat__messages')[0].scrollHeight});
       $('form')[0].reset();
+      $('.MainChat__messages').animate({ scrollTop: $('.MainChat__messages')[0].scrollHeight});
       $('.MainForm__Btn').prop('disabled',false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-  });
+      $('.MainForm__Btn').prop('disabled',false);
+    });
   });
 });
