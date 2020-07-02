@@ -96,7 +96,7 @@
   display: flex;
   justify-content: space-between;
   &__Left {
-    width: 165px;
+    width: calc(100vw - 495px);
     height: 100px;
     margin-left: 40px;
   }
@@ -112,7 +112,6 @@
   }
   &__MemberList {
     height: 20px;
-    width: 200px;
     margin-top: 15px ;
     font-size: 12px;
     display: flex;

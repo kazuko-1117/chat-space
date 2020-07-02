@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
     respond_to do |format|
       format.json
-      format.html
     end
   end
 
