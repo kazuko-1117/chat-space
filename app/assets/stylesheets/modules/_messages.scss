@@ -96,7 +96,6 @@
   display: flex;
   justify-content: space-between;
   &__Left {
-    width: calc(100vw - 495px);
     height: 100px;
     margin-left: 40px;
   }
@@ -143,7 +142,6 @@
    
   }
   &__Name {
-    width: 50px;
     height: 50px;
     font-size: 16px;
     font-weight: bold;
@@ -154,8 +152,11 @@
     padding-left: 10px;
     color: #999999;
   }
+
+  &__Text {
+    margin-top: 16px;
+  }
   &__content {
-    margin-top: 12px;
     font-size: 14px;
     color: #434A54;
   }
