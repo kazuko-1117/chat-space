@@ -58,6 +58,7 @@ $(function() {
     const userId = $(this).attr("data-user-id");
     $(this).parent().remove();
     addMember(userName, userId);
+
   });
   $(".ChatMembers").on("click", ".ChatMember__remove", function() {
     $(this).parent().remove();

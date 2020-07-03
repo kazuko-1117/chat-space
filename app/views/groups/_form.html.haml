@@ -10,6 +10,7 @@
       = f.label :name, "グループ名", class: 'SettingGroupForm__label'
     .SettingGroupForm__rightField
       = f.text_field :name, class: 'SettingGroupForm__input', placeholder: 'グループ名を入力してください'
+      -# = f.hidden_field :id, class:"group_id",value:group.id
   .SettingGroupForm__field
     .SettingGroupForm__leftField
       %label.SettingGroupForm__label チャットメンバーを追加
@@ -28,6 +29,7 @@
         - group.users.each do |user|
           - if current_user.name != user.name
             .ChatMember
+              -# %input{name: "group[user_ids][]",type: "hidden",value:user.id}
               %p.ChatMember__name 
                 = user.name
               .ChatMember__remove.ChatMember__button{"data-user-id": user.id, "data-user-name": user.name} 削除
